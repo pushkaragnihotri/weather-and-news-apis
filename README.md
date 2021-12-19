@@ -11,7 +11,7 @@
 
 ##### Prerequisites
 
-1. Node version > 4
+1. Node version > 10
 2. MongoDB installed
 3. Postman (To test APIs)
 
