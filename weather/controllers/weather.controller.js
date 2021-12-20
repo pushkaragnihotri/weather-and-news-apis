@@ -25,9 +25,12 @@ exports.getWeatherForecast = async (req, res) => {
 			}
 			result.data = data
 
-			res.status(200).json(result)
+			res.status(200).json({
+				status: 'OK',
+				message: result,
+			})
 		})
 		.catch(error => {
-			console.log('ERROR: ', error)
+			return res.send(error)
 		})
 }

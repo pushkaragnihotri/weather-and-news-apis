@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const { port } = require('./common/config/env.config')
 const UsersRouter = require('./users/routes.config')
 const WeatherRouter = require('./weather/routes.config')
+const NewsRouter = require('./news/routes.config')
 
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*')
@@ -24,6 +25,7 @@ app.use(express.json())
 app.use(cookieParser())
 UsersRouter(app)
 WeatherRouter(app)
+NewsRouter(app)
 
 app.get('/', (req, res) => {
 	res.send('Tadaa..server is working')

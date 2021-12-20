@@ -11,4 +11,5 @@ module.exports = {
 	jwt_secret: 'data_secret_2021',
 	jwt_expiration_in_seconds: 36000,
 	openweathermap_api_key: process.env.OPENWEATHERMAP_API_KEY,
+	news_api_key: process.env.NEWS_API_KEY,
 }
