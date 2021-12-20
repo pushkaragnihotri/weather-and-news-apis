@@ -12,7 +12,7 @@ exports.fetchNews = async (req, res) => {
 			result.count = response.data.totalResults
 
 			let data = []
-			for (let i = 0; i < response.data.articles.length; i += 8) {
+			for (let i = 0; i < response.data.articles.length; i++) {
 				let item = response.data.articles[i]
 				data.push({
 					headline: item.title,
@@ -20,7 +20,6 @@ exports.fetchNews = async (req, res) => {
 				})
 			}
 			result.data = data
-			console.log(result)
 
 			res.status(200).json({
 				status: 'OK',
