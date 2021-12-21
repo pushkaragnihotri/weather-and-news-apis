@@ -1,23 +1,25 @@
-const jwt = require('jsonwebtoken')
-const { jwt_secret } = require('../config/env.config')
+const jwt = require('jsonwebtoken');
+const { jwtSecret } = require('../config/env.config');
 
-checkAuthorization = (req, res, next) => {
-	const token = req.cookies['accessToken']
-	if (!token)
-		return res.status(401).json({
-			status: 'Unauthorized',
-			message: 'No Access token found',
-		})
-	try {
-		const decoded = jwt.verify(token, jwt_secret)
-		req.user = decoded
-		next()
-	} catch (e) {
-		return res.status(401).json({
-			status: 'Unauthorized',
-			message: 'Invalid or expired token',
-		})
-	}
-}
+const checkAuthorization = (req, res, next) => {
+  const token = req.cookies.accessToken;
+  if (!token) {
+    return res.status(401).json({
+      status: 'Unauthorized',
+      message: 'No Access token found',
+    });
+  }
+  try {
+    const decoded = jwt.verify(token, jwtSecret);
+    req.user = decoded;
+    next();
+  } catch (e) {
+    return res.status(401).json({
+      status: 'Unauthorized',
+      message: 'Invalid or expired token',
+    });
+  }
+  return false;
+};
 
-module.exports = checkAuthorization
+module.exports = checkAuthorization;
