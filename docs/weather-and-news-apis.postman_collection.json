@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "7c4afbf2-ae97-4128-a936-7e1bf9bc8f93",
+		"name": "weather-and-news-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/users/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"johndoe@mail.com\",\n    \"password\": \"p@ssw0rd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johndoe@mail.com\",\n    \"password\": \"p@ssw0rd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/weather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/weather?unit=metric",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "unit",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/news",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/news?search=crypto",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"news"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "crypto"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3670"
+		}
+	]
+}
