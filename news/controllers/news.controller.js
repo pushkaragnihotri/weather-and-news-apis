@@ -4,7 +4,7 @@ const config = require('../../common/config/env.config');
 exports.fetchNews = async (req, res) => {
   const result = {};
   const keyword = req.query.search;
-  const APIKey = config.news_api_key;
+  const APIKey = config.newsAPIKey;
 
   axios
     .get(`https://newsapi.org/v2/top-headlines?q=${keyword}&apiKey=${APIKey}`)

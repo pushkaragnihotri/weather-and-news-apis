@@ -3,7 +3,7 @@
 /* eslint-disable no-var */
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../index');
+const app = require('../server');
 
 var should = chai.should();
 chai.use(chaiHttp);

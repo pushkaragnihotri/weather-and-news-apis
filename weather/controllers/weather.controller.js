@@ -5,7 +5,7 @@ exports.getWeatherForecast = async (req, res) => {
   const result = {};
   const city = req.query.city || 'Bangalore';
   const unit = req.query.unit || 'metric';
-  const APIKey = config.openweathermap_api_key;
+  const APIKey = config.openWeatherMapAPIKey;
 
   axios
     .get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&appid=${APIKey}`)

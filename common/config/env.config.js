@@ -11,6 +11,6 @@ module.exports = {
     || `mongodb://${process.env.IP || 'localhost'}:${process.env.MONGO_PORT || 27017}/mydb`,
   jwtSecret: 'data_secret_2021',
   jwtExpirationInSeconds: 36000,
-  openweathermap_api_key: process.env.OPENWEATHERMAP_API_KEY,
-  news_api_key: process.env.NEWS_API_KEY,
+  openWeatherMapAPIKey: process.env.OPENWEATHERMAP_API_KEY,
+  newsAPIKey: process.env.NEWS_API_KEY,
 };

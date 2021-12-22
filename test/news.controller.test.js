@@ -4,7 +4,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const jwt = require('jsonwebtoken');
-const app = require('../index');
+const app = require('../server');
 const config = require('../common/config/env.config');
 
 var should = chai.should();
@@ -49,7 +49,7 @@ describe('News Controller APIs Tests', () => {
       const token = jwt.sign(payload, secret, { expiresIn });
       chai
         .request(app)
-        .get('/news?search=apple')
+        .get('/news?search=javascript')
         .set('Cookie', `accessToken=${token}`)
         .end((err, res) => {
           res.should.have.status(200);
