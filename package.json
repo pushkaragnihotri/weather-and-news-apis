@@ -6,7 +6,7 @@
 	"scripts": {
 		"server": "node index.js",
 		"dev": "npm run server",
-		"test": "mocha --timeout 10000"
+		"test": "mocha --timeout 25000"
 	},
 	"keywords": [],
 	"author": "",
