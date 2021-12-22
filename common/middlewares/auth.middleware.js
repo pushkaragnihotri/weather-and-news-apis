@@ -14,8 +14,8 @@ const checkAuthorization = (req, res, next) => {
     req.user = decoded;
     next();
   } catch (e) {
-    return res.status(401).json({
-      status: 'Unauthorized',
+    return res.status(403).json({
+      status: 'Forbidden',
       message: 'Invalid or expired token',
     });
   }
