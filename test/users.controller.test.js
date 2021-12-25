@@ -7,7 +7,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const app = require('../server');
 const userModel = require('../users/models/users.model');
-const UserController = require('../users/controllers/users.controller');
 const config = require('../common/config/env.config');
 
 var should = chai.should();
@@ -18,15 +17,15 @@ const newUser = {
   email: 'johndoe@mail.com',
   password: 'p@ssw0rd',
 };
-const loginCredentials = { email: 'johndoe@mail.com', password: 'p@ssw0rd' };
+
+const loginCredentials = {
+  email: 'johndoe@mail.com',
+  password: 'p@ssw0rd',
+};
 
 const createDemoUser = () => {
   const encryptedPassword = bcrypt.hashSync(newUser.password, 10);
   userModel.create({ ...newUser, password: encryptedPassword });
-};
-
-const loginDemoUser = () => {
-  UserController.login({ body: loginCredentials });
 };
 
 describe('Users Controller APIs Tests', () => {
